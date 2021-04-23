@@ -24,21 +24,22 @@
             }
          //-->
 
+
     </script>
     <link type="text/css" rel="stylesheet" href="css/displaystudentCSS.css">
     <link type="text/css" rel="stylesheet" href="css/side_bar_style.css">
     <%--    <link type="text/css" rel="stylesheet" href="css/headerstyle.css">--%>
-   <%-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>--%>
+    <%-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+             crossorigin="anonymous"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+             crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+             crossorigin="anonymous"></script>--%>
 </head>
 <body>
 <div id="mySidebar" class="sidebar">
@@ -55,7 +56,7 @@
         <h2></h2>
     </div>
     <div class="header">
-        <a  href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
+        <a href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
         <div class="header-right">
             <a class="active" href="add_designation.jsp">Add Designation</a>
             <a href="#contact">Contact</a>
@@ -74,7 +75,7 @@
                         <th>Id</th>
                         <th>Designation</th>
                         <th>Salary</th>
-<%--                        <th>Street</th>--%>
+                        <%--                        <th>Street</th>--%>
                         <th></th>
                         <th></th>
                     </tr>
@@ -83,7 +84,7 @@
                             <td>${st.getId()}</td>
                             <td>${st.getDesignation()}</td>
                             <td>${st.getSalary()}</td>
-<%--                            <td>${st.getStreet()}</td>--%>
+                                <%--                            <td>${st.getStreet()}</td>--%>
                                 <%--                        btn btn-labeled btn-success--%>
                             <td id="update">
                                 <div class="update"><input type="button" value="Update"
@@ -97,7 +98,7 @@ return false;" class="updatebt"/></div>
                                                            class="deletebt"/>
                                 </div>
                             </td>
-                                <%--        onclick="do(); window.location.href='StudentDetails?command=DELETE&studentId=${st.getId()}'; return false;"--%>
+                                <%--        onclick="do(); window.location.href='EmployeeDetails?command=DELETE&studentId=${st.getId()}'; return false;"--%>
                         </tr>
                     </c:forEach>
                 </table>
@@ -118,6 +119,7 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
+
 </script>
 
 </body>

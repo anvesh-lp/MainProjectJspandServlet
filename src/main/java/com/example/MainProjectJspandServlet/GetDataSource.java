@@ -14,7 +14,7 @@ public class GetDataSource<t> {
             initCtx = new InitialContext();
             Context envCtx = (Context) initCtx.lookup("java:comp/env");
             dataSource = (DataSource) envCtx.lookup("jdbc/MainProjectJspandServlet");
-//            StudentDataBase db = new StudentDataBase(ds);
+//            EmployeeDataBase db = new EmployeeDataBase(ds);
         } catch (NamingException e) {
 //            throw new ServletException("Something went wrong in Database");
             System.out.println("An NamingException in GetDataSourceClass");

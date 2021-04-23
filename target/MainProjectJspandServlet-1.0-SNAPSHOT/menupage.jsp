@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -17,6 +16,7 @@
          //-->
 
 
+
     </script>
     <link type="text/css" rel="stylesheet" href="css/displaystudentCSS.css">
     <link type="text/css" rel="stylesheet" href="css/side_bar_style.css">
@@ -32,74 +32,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
-    <%--<style>
-        body {
-            font-family: "Lato", sans-serif;
-        }
-
-        .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .sidebar a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidebar .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        .openbtn {
-            font-size: 20px;
-            cursor: pointer;
-            background-color: #111;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-        }
-
-        .openbtn:hover {
-            background-color: #444;
-        }
-
-        #main {
-            transition: margin-left .5s;
-            padding: 16px;
-        }
-
-        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        @media screen and (max-height: 450px) {
-            .sidebar {padding-top: 15px;}
-            .sidebar a {font-size: 18px;}
-        }
-    </style>--%>
 </head>
 <body>
 <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="${pageContext.request.contextPath}/StudentDetails">Employees</a>
+    <a href="${pageContext.request.contextPath}/EmployeeDetails">Employees</a>
     <a href="${pageContext.request.contextPath}/LocationInfoManagement">Locations</a>
     <a href="${pageContext.request.contextPath}/EmployeeDesignationInfo">Emp. Designations</a>
     <a href="${pageContext.request.contextPath}/CustomerInfo">Customers</a>
@@ -111,7 +48,7 @@
         <h2></h2>
     </div>
     <div class="header">
-        <a  href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
+        <a href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
         <div class="header-right">
             <a class="active" href="add_student.jsp">Add Student</a>
             <a href="#contact">Contact</a>
@@ -127,39 +64,47 @@
             <div class="bg">
                 <table class="center">
                     <tr>
-                        <th>Name</th>
-                        <th>Score</th>
-                        <th>Status</th>
+                        <th>Location Id</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>first name</th>
+                        <th>last name</th>
+                        <th>emp id</th>
+                        <th>Desg Id</th>
                         <th></th>
                         <th></th>
                     </tr>
                     <c:forEach var="st" items="${listofstudents}">
                         <tr>
-                            <td>${st.getName()}</td>
-                            <td>${st.getMarks()}</td>
-                            <td>${st.getStatus()}</td>
+                            <td>${st.getLocid()}</td>
+                            <td>${st.getEmail()}</td>
+                            <td>${st.getMobile()}</td>
+                            <td>${st.getFname()}</td>
+                            <td>${st.getLaname()}</td>
+                            <td>${st.getEid()}</td>
+                            <td>${st.getDsgid()}</td>
                                 <%--                        btn btn-labeled btn-success--%>
                             <td id="update">
                                 <div class="update"><input type="button" value="Update"
-                                                           onclick="window.location.href='StudentDetails?command=LOAD&studentId=${st.getId()}';
+                                                           onclick="window.location.href='EmployeeDetails?command=LOAD&studentId=${st.getEid()}';
 return false;" class="updatebt"/></div>
                             </td>
                             <td id="delete">
                                 <div class="delete"><input type="button" value="Delete"
-                                                           onclick="if(!display()) return false; window.location.href='StudentDetails?command=DELETE&studentId=${st.getId()}';
+                                                           onclick="if(!display()) return false; window.location.href='EmployeeDetails?command=DELETE&studentId=${st.getEid()}';
                                                        return false;"
                                                            class="deletebt"/>
                                 </div>
                             </td>
-                                <%--        onclick="do(); window.location.href='StudentDetails?command=DELETE&studentId=${st.getId()}'; return false;"--%>
+                                <%--        onclick="do(); window.location.href='EmployeeDetails?command=DELETE&studentId=${st.getId()}'; return false;"--%>
                         </tr>
                     </c:forEach>
                 </table>
             </div>
         </div>
     </div>
-<%--    <h2>Collapsed Sidebar</h2>--%>
-<%--    <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>--%>
+    <%--    <h2>Collapsed Sidebar</h2>--%>
+    <%--    <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>--%>
 </div>
 
 <script>
@@ -172,6 +117,7 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
+
 </script>
 
 </body>

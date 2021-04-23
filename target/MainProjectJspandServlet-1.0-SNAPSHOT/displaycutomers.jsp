@@ -24,6 +24,7 @@
             }
          //-->
 
+
     </script>
     <link type="text/css" rel="stylesheet" href="css/displaystudentCSS.css">
     <link type="text/css" rel="stylesheet" href="css/side_bar_style.css">
@@ -31,7 +32,7 @@
 <body>
 <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="${pageContext.request.contextPath}/StudentDetails">Employees</a>
+    <a href="${pageContext.request.contextPath}/EmployeeDetails">Employees</a>
     <a href="${pageContext.request.contextPath}/LocationInfoManagement">Locations</a>
     <a href="${pageContext.request.contextPath}/EmployeeDesignationInfo">Emp. Designations</a>
     <a href="${pageContext.request.contextPath}/CustomerInfo">Customers</a>
@@ -43,7 +44,7 @@
         <h2></h2>
     </div>
     <div class="header">
-        <a  href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
+        <a href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
         <div class="header-right">
             <a class="active" href="add_customer.jsp">Add Customer</a>
             <a href="#contact">Contact</a>
@@ -76,7 +77,7 @@
                             <td>${st.getPhone()}</td>
                             <td>${st.getEmail()}</td>
                             <td>${st.getLocid()}</td>
-<%--                            <td>${st.getStreet()}</td>--%>
+                                <%--                            <td>${st.getStreet()}</td>--%>
                                 <%--                        btn btn-labeled btn-success--%>
                             <td id="update">
                                 <div class="update"><input type="button" value="Update"
@@ -90,7 +91,7 @@ return false;" class="updatebt"/></div>
                                                            class="deletebt"/>
                                 </div>
                             </td>
-                                <%--        onclick="do(); window.location.href='StudentDetails?command=DELETE&studentId=${st.getId()}'; return false;"--%>
+                                <%--        onclick="do(); window.location.href='EmployeeDetails?command=DELETE&studentId=${st.getId()}'; return false;"--%>
                         </tr>
                     </c:forEach>
                 </table>
@@ -111,6 +112,7 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
+
 </script>
 
 </body>

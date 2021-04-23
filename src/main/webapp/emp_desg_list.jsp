@@ -98,7 +98,7 @@ return false;" class="updatebt"/></div>
                                                            class="deletebt"/>
                                 </div>
                             </td>
-                                <%--        onclick="do(); window.location.href='StudentDetails?command=DELETE&studentId=${st.getId()}'; return false;"--%>
+                                <%--        onclick="do(); window.location.href='EmployeeDetails?command=DELETE&studentId=${st.getId()}'; return false;"--%>
                         </tr>
                     </c:forEach>
                 </table>
