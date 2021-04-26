@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="header">
-    <a href="" class="logo">UNIVERSITY OF REDLAKUNTA</a>
+    <a href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
     <div class="header-right">
         <a class="active" href="${pageContext.request.contextPath}/CategorieInfo">View Categories</a>
         <a href="#contact">Contact</a>

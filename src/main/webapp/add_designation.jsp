@@ -8,9 +8,9 @@
 </head>
 <body>
 <div class="header">
-    <a href="" class="logo">UNIVERSITY OF REDLAKUNTA</a>
+    <a href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
     <div class="header-right">
-        <a class="active" href="StudentDetails">View Designations</a>
+        <a class="active" href="EmployeeDesignationInfo">View Designations</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
     </div>

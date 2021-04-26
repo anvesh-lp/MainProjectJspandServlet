@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="header">
-    <a href="" class="logo">UNIVERSITY OF REDLAKUNTA</a>
+    <a href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
     <div class="header-right">
         <a class="active" href="EmployeeDetails">View Employees</a>
         <a href="#contact">Contact</a>
@@ -41,7 +41,8 @@
                 <td>
                     <label>Mobile</label>
                 </td>
-                <td><input class="namei" type="text" placeholder="Enter Students name" name="mobile" required="required">
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="mobile"
+                           required="required">
                 </td>
             </tr>
             <tr>

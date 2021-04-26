@@ -11,26 +11,27 @@
     </div>
 </div>
 <div class="center">
-    <form action="StudentDetails" method="get">
+    <form action="EmployeeDetails" method="get">
         <input type="hidden" value="DELETE" name="command">
         <input type="hidden" value="${student.getId()}" name="id">
         <table class="center">
             <tbody>
             <tr>
                 <td>
-                    <label >Name</label>
+                    <label>Name</label>
                 </td>
                 <td><input type="text" placeholder="Enter Students name" name="name" value="${student.getName()}"></td>
             </tr>
             <tr>
                 <td>
-                    <label >Percentage</label>
+                    <label>Percentage</label>
                 </td>
-                <td><input type="text" placeholder="Enter Students Marks" name="percentage" value="${student.getMarks()}"></td>
+                <td><input type="text" placeholder="Enter Students Marks" name="percentage"
+                           value="${student.getMarks()}"></td>
             </tr>
             <tr>
                 <td>
-                    <label ></label>
+                    <label></label>
                 </td>
                 <td><input type="submit" value="Save"></td>
             </tr>

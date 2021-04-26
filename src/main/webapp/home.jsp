@@ -28,9 +28,9 @@
 <div class="bg">
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="${pageContext.request.contextPath}/EmployeeDetails">Student Details</a>
+        <a href="${pageContext.request.contextPath}/EmployeeDetails">Employee Details</a>
         <a href="${pageContext.request.contextPath}/LocationInfoManagement">Locations</a>
-        <a href="${pageContext.request.contextPath}/EmployeeDesignationInfo">Emp. Designations</a>
+        <a href="${pageContext.request.contextPath}/EmployeeDesignationInfo">Designations</a>
         <a href="${pageContext.request.contextPath}/CustomerInfo">Customers</a>
         <a href="${pageContext.request.contextPath}/CategorieInfo">Categories</a>
     </div>

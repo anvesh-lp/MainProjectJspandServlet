@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class="center">
-    <form action="StudentDetails" method="get">
+    <form action="EmployeeDetails" method="get">
         <input type="hidden" value="DELETE" name="command">
         <input type="hidden" value="${student.getId()}" name="id">
         <table class="center">

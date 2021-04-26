@@ -44,7 +44,7 @@
 <body>
 <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="${pageContext.request.contextPath}/StudentDetails">Employees</a>
+    <a href="${pageContext.request.contextPath}/EmployeeDetails">Employees</a>
     <a href="${pageContext.request.contextPath}/LocationInfoManagement">Locations</a>
     <a href="${pageContext.request.contextPath}/EmployeeDesignationInfo">Emp. Designations</a>
     <a href="${pageContext.request.contextPath}/CustomerInfo">Customers</a>

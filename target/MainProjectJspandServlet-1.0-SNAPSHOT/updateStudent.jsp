@@ -27,50 +27,55 @@
             <tbody>
             <tr>
                 <td>
-                <label>Location Id</label>
+                    <label>Location Id</label>
                 </td>
                 <td>
-                <select name="locid" class="namei">
-                    <option value="${student.getLocid()}">${student.getLocid()}</option>
-                    <c:forEach items="${lid}" var="category">
-                        <option value="${category}">${category}</option>
-                    </c:forEach>
-                </select>
+                    <select name="locid" class="namei">
+                        <option value="${student.getLocid()}">${student.getLocid()}</option>
+                        <c:forEach items="${lid}" var="category">
+                            <option value="${category}">${category}</option>
+                        </c:forEach>
+                    </select>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>Email</label>
                 </td>
-                <td><input class="namei" type="text" placeholder="Enter Students name" name="email" required="required" value="${student.getEmail()}">
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="email" required="required"
+                           value="${student.getEmail()}">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>Mobile</label>
                 </td>
-                <td><input class="namei" type="text" placeholder="Enter Students name" name="mobile" required="required" value="${student.getMobile()}">
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="mobile" required="required"
+                           value="${student.getMobile()}">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>First Name</label>
                 </td>
-                <td><input class="namei" type="text" placeholder="Enter Students name" name="fname" required="required" value="${student.getFname()}">
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="fname" required="required"
+                           value="${student.getFname()}">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>Last Name</label>
                 </td>
-                <td><input class="namei" type="text" placeholder="Enter Students name" name="lname" required="required" value="${student.getLaname()}">
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="lname" required="required"
+                           value="${student.getLaname()}">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>Emp Id</label>
                 </td>
-                <td><input class="namei" type="text" placeholder="Enter Students name" name="eid" required="required" value="${student.getEid()}" readonly>
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="eid" required="required"
+                           value="${student.getEid()}" readonly>
                 </td>
             </tr>
             <tr>
@@ -79,11 +84,11 @@
                 </td>
                 <td>
                     <select name="dsgid" class="namei">
-                    <option value="${student.getDsgid()}">${student.getDsgid()}</option>
-                    <c:forEach items="${dsgid}" var="category">
-                        <option value="${category}">${category}</option>
-                    </c:forEach>
-                </select>
+                        <option value="${student.getDsgid()}">${student.getDsgid()}</option>
+                        <c:forEach items="${dsgid}" var="category">
+                            <option value="${category}">${category}</option>
+                        </c:forEach>
+                    </select>
                 </td>
             </tr>
             <tr>

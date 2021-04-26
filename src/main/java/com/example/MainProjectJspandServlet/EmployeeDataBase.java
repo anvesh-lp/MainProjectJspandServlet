@@ -126,7 +126,6 @@ public class EmployeeDataBase {
         }
     }
 
-
     public void deleletStudent(int stid) {
         Connection con = null;
         PreparedStatement stmt = null;
