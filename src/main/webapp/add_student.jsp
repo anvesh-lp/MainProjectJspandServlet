@@ -10,7 +10,7 @@
 <div class="header">
     <a href="" class="logo">UNIVERSITY OF REDLAKUNTA</a>
     <div class="header-right">
-        <a class="active" href="StudentDetails">View Students</a>
+        <a class="active" href="EmployeeDetails">View Employees</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
     </div>
@@ -19,23 +19,59 @@
     <h1>Add Student</h1>
 </div>
 <div class="center">
-    <form action="StudentDetails" method="post">
+    <form action="EmployeeDetails" method="post">
         <input type="hidden" value="ADD" name="command">
         <table class="center">
             <tbody>
             <tr>
                 <td>
-                    <label>Name</label>
+                    <label>Location Id</label>
                 </td>
-                <td><input class="namei" type="text" placeholder="Enter Students name" name="name" required="required">
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="locid" required="required">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Percentage</label>
+                    <label>Email</label>
                 </td>
-                <td><input class="namei" type="text" placeholder="Enter Students Marks" name="percentage"
-                           required="required"></td>
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="email" required="required">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Mobile</label>
+                </td>
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="mobile"
+                           required="required">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>First Name</label>
+                </td>
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="fname" required="required">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Last Name</label>
+                </td>
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="lname" required="required">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Emp Id</label>
+                </td>
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="eid" required="required">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>desg Id</label>
+                </td>
+                <td><input class="namei" type="text" placeholder="Enter Students name" name="dsgid" required="required">
+                </td>
             </tr>
             <tr>
                 <td colspan="2"><input class="submitc" type="submit" value="Save"></td>

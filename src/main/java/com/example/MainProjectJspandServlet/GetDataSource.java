@@ -37,4 +37,8 @@ public class GetDataSource<t> {
     public CategorieDataBase getCategorieDataBase() {
         return new CategorieDataBase(dataSource);
     }
+
+    public FindId getFindById() {
+        return new FindId(dataSource);
+    }
 }

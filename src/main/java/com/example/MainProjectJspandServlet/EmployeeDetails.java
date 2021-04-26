@@ -19,6 +19,7 @@ import java.util.List;
 public class EmployeeDetails extends HttpServlet {
 
     private EmployeeDataBase studentDataBase;
+    private FindId findId;
 
     @Override
     public void init() throws ServletException {
@@ -29,6 +30,7 @@ public class EmployeeDetails extends HttpServlet {
             Context envCtx = (Context) initCtx.lookup("java:comp/env");
             DataSource ds = (DataSource) envCtx.lookup("jdbc/MainProjectJspandServlet");
             studentDataBase = new EmployeeDataBase(ds);
+            findId = new GetDataSource<FindId>().getFindById();
         } catch (NamingException e) {
             throw new ServletException("Something went wrong in Database");
         }
@@ -99,20 +101,29 @@ public class EmployeeDetails extends HttpServlet {
     }
 
     private void updateStudentInDatabase(HttpServletRequest request, HttpServletResponse response) {
-        int marks = Integer.parseInt(request.getParameter("percentage"));
-        Student st = new Student(Integer.parseInt(request.getParameter("id")), request.getParameter("name"), marks, marks > 50 ? "pass" : "Fail");
-        studentDataBase.updateStudent(st);
+        String locid = request.getParameter("locid");
+        String email = request.getParameter("email");
+        String mobile = request.getParameter("mobile");
+        String fname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
+        String eid = request.getParameter("eid");
+        String dsgid = request.getParameter("dsgid");
+        Employee employee = new Employee(locid, email, mobile, fname, lname, Integer.parseInt(eid), dsgid);
+        studentDataBase.updateStudent(employee);
         try {
             displayStudents(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
+
     }
 
     private void updateStudent(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("studentId"));
-        Student st = studentDataBase.getStudent(id);
+        Employee st = studentDataBase.getEmployee(id);
         request.setAttribute("student", st);
+        request.setAttribute("lid", findId.findLocationId());
+        request.setAttribute("dsgid", findId.findDesignationId());
         RequestDispatcher rd = request.getRequestDispatcher("/updateStudent.jsp");
         try {
             rd.forward(request, response);
@@ -120,15 +131,19 @@ public class EmployeeDetails extends HttpServlet {
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
-
     }
 
+
     private void addStudent(HttpServletRequest request, HttpServletResponse response) {
-        String name = request.getParameter("name");
-        int marks = Integer.parseInt(request.getParameter("percentage"));
-        String st = marks <= 50 ? "FAIL" : "PASS";
-        Student student = new Student(name, marks, st);
-        studentDataBase.addStudnetToDatabase(student);
+        String locid = request.getParameter("locid");
+        String email = request.getParameter("email");
+        String mobile = request.getParameter("mobile");
+        String fname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
+        String eid = request.getParameter("eid");
+        String dsgid = request.getParameter("dsgid");
+        Employee employee = new Employee(locid, email, mobile, fname, lname, Integer.parseInt(eid), dsgid);
+        studentDataBase.addStudnetToDatabase(employee);
         try {
 //            displayStudents(request,response);
             response.sendRedirect(request.getContextPath() + "/EmployeeDetails?command=LIST");

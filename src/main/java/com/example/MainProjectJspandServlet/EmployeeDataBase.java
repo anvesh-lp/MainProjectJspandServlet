@@ -52,16 +52,20 @@ public class EmployeeDataBase {
         }
     }
 
-    public void addStudnetToDatabase(Student student) {
+    public void addStudnetToDatabase(Employee student) {
         Connection con = null;
         PreparedStatement stmt = null;
         try {
             con = dataSource.getConnection();
-            String sqlAddquery = "insert into studentdatabase.student " + "(name,marks,status)" + "values(?,?,?)";
+            String sqlAddquery = "insert into grocerystore.employees " + "(Location_Id,Email,Mobile,First_Name,Last_Name,E_Id,Dsgn_Id)" + "values(?,?,?,?,?,?,?)";
             stmt = con.prepareStatement(sqlAddquery);
-            stmt.setString(1, student.getName());
-            stmt.setInt(2, student.getMarks());
-            stmt.setString(3, student.getStatus());
+            stmt.setString(1, student.getLocid());
+            stmt.setString(2, student.getEmail());
+            stmt.setString(3, student.getMobile());
+            stmt.setString(4, student.getFname());
+            stmt.setString(5, student.getLaname());
+            stmt.setInt(6, student.getEid());
+            stmt.setString(7, student.getDsgid());
             stmt.executeUpdate();
 
         } catch (SQLException throwables) {
@@ -72,39 +76,47 @@ public class EmployeeDataBase {
 
     }
 
-    public Student getStudent(int id) {
+    public Employee getEmployee(int id) {
         Connection con = null;
         PreparedStatement stmt = null;
-        Student student = null;
+        Employee employee = null;
         ResultSet rs = null;
         try {
             con = dataSource.getConnection();
-            String sqlQuery = "select * from studentdatabase.student where id=?";
+            String sqlQuery = "select * from grocerystore.employees where E_Id=?";
             stmt = con.prepareStatement(sqlQuery);
             stmt.setInt(1, id);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                student = new Student(rs.getInt("id"), rs.getString("name"), rs.getInt("marks"), rs.getString("status"));
+                employee = new Employee(rs.getString("Location_id"), rs.getString("Email")
+                        , rs.getString("Mobile"), rs.getString("First_Name"), rs.getString("last_Name"),
+                        rs.getInt("E_id"), rs.getString("Dsgn_Id"));
+
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
             close(con, stmt, rs);
         }
-        return student;
+        return employee;
     }
 
-    public void updateStudent(Student st) {
+
+    public void updateStudent(Employee student) {
         Connection con = null;
         PreparedStatement stmt = null;
         try {
             con = dataSource.getConnection();
-            String sqlQuery = "update studentdatabase.student set name=?,marks=?,status=? where id=?";
+            String sqlQuery = "update grocerystore.employees set Location_Id=?,Email=?,Mobile=? ,First_Name=?,Last_Name=?,Dsgn_Id=?, E_Id=? where E_Id=?";
             stmt = con.prepareStatement(sqlQuery);
-            stmt.setString(1, st.getName());
-            stmt.setInt(2, st.getMarks());
-            stmt.setString(3, st.getStatus());
-            stmt.setInt(4, st.getId());
+            stmt.setString(1, student.getLocid());
+            stmt.setString(2, student.getEmail());
+            stmt.setString(3, student.getMobile());
+            stmt.setString(4, student.getFname());
+            stmt.setString(5, student.getLaname());
+            stmt.setString(6, student.getDsgid());
+            stmt.setInt(7, student.getEid());
+            stmt.setInt(8, student.getEid());
             stmt.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -112,6 +124,7 @@ public class EmployeeDataBase {
             close(con, stmt, null);
         }
     }
+
 
     public void deleletStudent(int stid) {
         Connection con = null;
@@ -128,4 +141,5 @@ public class EmployeeDataBase {
             close(con, stmt, null);
         }
     }
+
 }

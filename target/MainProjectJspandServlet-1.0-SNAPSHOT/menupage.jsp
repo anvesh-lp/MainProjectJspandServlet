@@ -50,7 +50,7 @@
     <div class="header">
         <a href="home.jsp" class="logo">UNIVERSITY OF REDLAKUNTA</a>
         <div class="header-right">
-            <a class="active" href="add_student.jsp">Add Student</a>
+            <a class="active" href="add_student.jsp">Add Employee</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
         </div>
@@ -83,7 +83,6 @@
                             <td>${st.getLaname()}</td>
                             <td>${st.getEid()}</td>
                             <td>${st.getDsgid()}</td>
-                                <%--                        btn btn-labeled btn-success--%>
                             <td id="update">
                                 <div class="update"><input type="button" value="Update"
                                                            onclick="window.location.href='EmployeeDetails?command=LOAD&studentId=${st.getEid()}';
@@ -96,7 +95,6 @@ return false;" class="updatebt"/></div>
                                                            class="deletebt"/>
                                 </div>
                             </td>
-                                <%--        onclick="do(); window.location.href='EmployeeDetails?command=DELETE&studentId=${st.getId()}'; return false;"--%>
                         </tr>
                     </c:forEach>
                 </table>
