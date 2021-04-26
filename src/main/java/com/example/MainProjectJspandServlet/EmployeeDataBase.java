@@ -52,6 +52,7 @@ public class EmployeeDataBase {
         }
     }
 
+
     public void addStudnetToDatabase(Employee student) {
         Connection con = null;
         PreparedStatement stmt = null;
@@ -73,8 +74,8 @@ public class EmployeeDataBase {
         } finally {
             close(con, stmt, null);
         }
-
     }
+
 
     public Employee getEmployee(int id) {
         Connection con = null;
